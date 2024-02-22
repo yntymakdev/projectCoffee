@@ -1,29 +1,39 @@
 import { Avatar, Box, Typography } from "@mui/material";
-import React, { useState } from "react";
-import logo from "..//..//../image/images_coffee.png";
-import { useProductContext } from "../../../context/ProductContext";
-import cofe from "../../../28e3efe5-b55e-4938-9091-c64ca816e01c.jpg";
-import { Link, useNavigate } from "react-router-dom";
-const AddCoffee = () => {
-  const { addProduct } = useProductContext();
-
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useProductContext } from "../../context/ProductContext";
+const EditProduct = () => {
+  const { getOneProduct, onProduct, editProduct } = useProductContext();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
   const [solid, setSolid] = useState("");
   const [sol, setSol] = useState("");
   const [mol, setMol] = useState("");
+  const { id } = useParams();
+  useEffect(() => {
+    getOneProduct(id);
+  }, [getOneProduct,id]);
+
+  console.log(onProduct);
+  useEffect(() => {
+    if (onProduct) {
+      setImage(onProduct.image || "");
+      setName(onProduct.name || "");
+      setPrice(onProduct.price || 0);
+    }
+  }, [onProduct]);
 
   const navigate = useNavigate();
 
   function createContext() {
-    let obj = {
+    let newObj = {
       name: name,
       price: price,
       image: image,
     };
 
-    addProduct(obj);
+    editProduct(id, newObj);
 
     navigate("/");
   }
@@ -40,12 +50,12 @@ const AddCoffee = () => {
         }}
       >
         <Link to="/">
-          <Avatar src={logo} sx={{ width: "70px", height: "70px" }} />
+          <Avatar src="" sx={{ width: "70px", height: "70px" }} />
         </Link>
         <Typography sx={{ fontWeight: "bold" }} variant="h5">
           KULTURA COFFEE
         </Typography>
-        <Avatar src={logo} sx={{ width: "70px", height: "70px" }} />
+        <Avatar src="" sx={{ width: "70px", height: "70px" }} />
       </Box>
       <Box className="container">
         <Box
@@ -53,7 +63,6 @@ const AddCoffee = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            minHeight: "70vh",
           }}
         >
           <Box
@@ -63,13 +72,14 @@ const AddCoffee = () => {
               gap: "20px",
               width: "50%",
               textAlign: "center",
+              overflow: "hidden",
             }}
           >
             <Typography sx={{ fontSize: "24px", fontWeight: "bold" }}>
               Add product
             </Typography>
             <div className="re">
-              <img src={cofe} alt="" />
+              <img src="" alt="" />
             </div>
 
             <input
@@ -84,6 +94,7 @@ const AddCoffee = () => {
               }}
               type="text"
               placeholder="Image"
+              value={image}
             />
 
             {/* <div style={{ border: solid ? "solid 2px red" : "black" }}>
@@ -105,6 +116,7 @@ const AddCoffee = () => {
               }}
               type="text"
               placeholder="Image"
+              value={name}
             />
             {/* <TextField
               onChange={(e) => setName(e.target.value)}
@@ -121,6 +133,7 @@ const AddCoffee = () => {
               }}
               type="text"
               placeholder="Image"
+              value={price}
             />
             {/* <TextField
               onChange={(e) => setPrice(e.target.value)}
@@ -129,7 +142,10 @@ const AddCoffee = () => {
               variant="outlined"
             /> */}
             <button
-              onClick={createContext}
+              onClick={() => {
+                navigate("/");
+                createContext();
+              }}
               style={{
                 width: "700px",
                 height: "50px",
@@ -138,9 +154,10 @@ const AddCoffee = () => {
                 color: "white",
                 fontSize: "20px",
                 borderRadius: "5px",
+                marginBottom: "1px",
               }}
             >
-              Add product
+              save
             </button>
           </Box>
         </Box>
@@ -149,4 +166,4 @@ const AddCoffee = () => {
   );
 };
 
-export default AddCoffee;
+export default EditProduct;

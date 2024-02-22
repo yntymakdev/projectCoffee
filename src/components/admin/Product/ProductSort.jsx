@@ -3,10 +3,8 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
-import { useProductContext } from "../../../context/ProductContext";
 
 const ProductSort = () => {
-
   return (
     <Box>
       <Box className="container">

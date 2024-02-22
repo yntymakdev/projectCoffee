@@ -1,40 +1,10 @@
 {
   "product": [
     {
-      "id": "c15c",
-      "name": "elkb",
-      "price": "elwfk",
-      "image": "dklnf"
-    },
-    {
-      "id": "30e5",
-      "name": "ejg",
-      "price": "efku",
-      "image": "wgjf"
-    },
-    {
-      "id": "3ace",
-      "name": "uyt",
-      "price": "76543",
-      "image": ""
-    },
-    {
-      "id": "570a",
-      "name": "uyt",
-      "price": "76543",
-      "image": ""
-    },
-    {
-      "id": "3bb5",
-      "name": "uyt",
-      "price": "76543",
-      "image": ""
-    },
-    {
-      "id": "7cb8",
-      "name": "uyt",
-      "price": "76543",
-      "image": ""
+      "id": "a333",
+      "name": "Lavazza coffee",
+      "price": "$19.99",
+      "image": "https://s3-alpha-sig.figma.com/img/ef78/fb75/e8d40f1f803a292e4d1bde3ef9f77d4b?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Zk1Ify~m-FtxkdWsGOVHCSNN0RQGpx1QOXkTVW4iObyCvAiIo47Qx0AuvUDFeH5RBGn5eCZ-KR6MNwseYltvzWsxHlvhPVkzb4H0tIH7cnlsTmTf7o5~pqZV5pAJLHO3bFdsX7E17JzftMIcAaEsHuPxsmF5-4MfN1Yu5E~G0pJ5DWDuF8KtLZPKAIItJcLXtH8jlAT0s5zMbvVyw1mWCYAxQkGrGCXm0bT3~i8AsjHYE3viSjpRacSKr-bDA5UaevshgkwBpPGPhEQR~1M3XdUBHNf4gMjQJNaGB5ElL6yiV291xVLK6EjxhxfJG3EvHjxoAR0-eqVkgUuOkeVt7g__"
     }
   ]
 }

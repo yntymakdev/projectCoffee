@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useProductContext } from "../../../context/ProductContext";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
@@ -6,14 +7,14 @@ const ProductList = () => {
 
   useEffect(() => {
     readProduct();
-  }, []);
+  }, [readProduct]);
 
   return (
     <div>
       {product ? (
         product.map((el, index) => <ProductCard key={index} el={el} />)
       ) : (
-        <h1>Loading...</h1>
+        <h1>No products found.</h1>
       )}
     </div>
   );

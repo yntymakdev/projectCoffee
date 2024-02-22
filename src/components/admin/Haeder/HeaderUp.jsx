@@ -4,12 +4,13 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonIcon from "@mui/icons-material/Person";
 const HeaderUp = () => {
   return (
-    <Box
+    <Box className="HeaderUp"
       sx={{
         width: "100%",
         height: "25px",
         background: "black",
         padding: "5px 0",
+        color: "white",
       }}
     >
       <Box className="container">
@@ -29,6 +30,7 @@ const HeaderUp = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
+                color:"white",
               }}
             >
               <Box
@@ -42,6 +44,7 @@ const HeaderUp = () => {
                 </Typography>
               </Box>
               <PersonIcon sx={{ fontSize: "20px" }} />
+              {/* <input className="input-one" type="text" /> */}
             </Box>
           </Box>
         </Box>
